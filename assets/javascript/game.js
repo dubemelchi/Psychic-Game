@@ -18,13 +18,15 @@ let alphabet = ['a','b','c','d','e','f','g','h','j'];
 let wins = 0,
     losses = 0,
     gLeft = 3,
-    yGuesses = 'a';
+    yGuesses = document.querySelector('#gSoFar');
 
     console.log(yGuesses);
 
 let randomL = alphabet[Math.floor(Math.random()*alphabet.length)];
 
 console.log(randomL);
+
+
 
 document.onkeypress = function(event) {
   let playerGuess = event.key;
@@ -33,11 +35,21 @@ document.onkeypress = function(event) {
 
   else{gLeft--;}
 
-  if(gLeft === 0){losses++}
+  if(gLeft === 0){losses++;}
 
 }
 
-document.getElementById('ws').innerHTML = "Wins:" + wins;
+document.getElementById('ws').innerHTML = "Wins:"+" " + wins;
+document.getElementById('ls').innerHTML = "Losses:"+" " + losses;
+document.getElementById('gLeft').innerHTML = "Guesses Left:"+" " + gLeft;
+document.getElementById('gSoFar').innerHTML = "Your Guesses so far:"+" " + yGuesses;
+
+
+// listen for guess
+
+yGuesses.addEventListener('onkeypress', function(){
+  console.log(yGuesses);
+})
 
 
 
