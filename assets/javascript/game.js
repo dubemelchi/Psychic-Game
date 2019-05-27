@@ -8,7 +8,7 @@ let alphabet = ['a','b','c','d','e','f','g','h','j'];
 let wins = 0,
     losses = 0,
     guessesLeft = 3,
-    yourGuesses = [];
+    yourGuesses = [''];
     
 
 // Computer's guess
@@ -20,6 +20,7 @@ console.log(randomL);
 document.querySelector("#ws").innerHTML = "Wins: "+" "+ wins;
 document.querySelector("#ls").innerHTML = "Losses: "+" "+ losses;
 document.querySelector("#gLeft").innerHTML = "Guesses Left: "+" "+ guessesLeft;
+document.querySelector("#yGuesses").innerHTML = "Your Guesses: "+" "+ yourGuesses;
 
 
 
@@ -28,20 +29,22 @@ function updateWins(){
   document.querySelector("#ws").innerHTML = "Wins: "+" "+ wins;
 }
 
-
+function updateGuessesLeft(){
+  document.querySelector("#gLeft").innerHTML = "Guesses Left:" + " " + guessesLeft; 
+}
 
 
 // When the user presses a key, it will run the following function...
 document.onkeypress = function(event) {
   let userInput = event.key;
 
-  if(userInput === randomL){alert("WIN!"); wins++;}
+  if(userInput === randomL){alert("YOU WIN!"); wins++;}
 
   else{ guessesLeft--; }
 
-  if(guessesLeft === 0){alert("LOOSE!");losses++;}
+  if(guessesLeft === 0){losses++; alert("YOU LOOSE!");}
 
-//display userInput
+  //display userInput
   document.querySelector("#yGuesses").innerHTML = "Your Guesses: " + userInput;
 
   console.log(userInput);
@@ -51,15 +54,16 @@ document.onkeypress = function(event) {
 
   //display guesses left
   document.querySelector("#gLeft").innerHTML = "Guesses Left:" +" "+ guessesLeft;
-  
 
-  
+  //display Losses
+  document.querySelector("#ls").innerHTML = "Losses:" +" "+ losses;
 
 
 }
 
-// Function that updates wins
+updateGuessesLeft();
 
+// Function that updates wins
 
 
 
