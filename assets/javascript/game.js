@@ -17,10 +17,29 @@ let alphabet = ['a','b','c','d','e','f','g','h','j'];
 
 let wins = 0,
     losses = 0,
-    guessesLeft = 3,
-    yourGuesses = 'a';
+    gLeft = 3,
+    yGuesses = 'a';
 
-    
+    console.log(yGuesses);
+
+let randomL = alphabet[Math.floor(Math.random()*alphabet.length)];
+
+console.log(randomL);
+
+document.onkeypress = function(event) {
+  let playerGuess = event.key;
+
+  if(playerGuess === randomL){wins++;}
+
+  else{gLeft--;}
+
+  if(gLeft === 0){losses++}
+
+}
+
+document.getElementById('ws').innerHTML = "Wins:" + wins;
+
+
 
 
 
