@@ -8,7 +8,7 @@ let alphabet = ['a','b','c','d','e','f','g','h','j'];
 let wins = 0,
     losses = 0,
     guessesLeft = 3,
-    yourGuesses;
+    yourGuesses = [];
 
 // Computer's guess
 
@@ -19,15 +19,12 @@ let randomL = alphabet[Math.floor(Math.random()*alphabet.length)];
 document.onkeypress = function(event) {
   let userInput = event.key;
 
+  document.querySelector("#yGuesses").innerHTML = "Your Guesses: " + userInput;
   console.log(userInput);
 
 
 
 }
-
-
-
-
 
 // Function that updates wins
 
@@ -43,7 +40,7 @@ function updateWins(){
 
 
 
-// listen for guess
+
 
 
 
