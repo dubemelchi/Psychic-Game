@@ -43,6 +43,7 @@ document.onkeypress = function(event) {
     wins++; 
     guessesLeft = 3;
     randomL = alphabet[Math.floor(Math.random()*alphabet.length)];
+    
 
 console.log(randomL);
 
