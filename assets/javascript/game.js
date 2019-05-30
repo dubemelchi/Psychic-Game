@@ -41,7 +41,11 @@ document.onkeypress = function(event) {
   if (userInput === randomL) {
     alert("YOU WIN!"); 
     wins++; 
-    guessesLeft = 3
+    guessesLeft = 3;
+    randomL = alphabet[Math.floor(Math.random()*alphabet.length)];
+
+console.log(randomL);
+
   }
 
   else{ guessesLeft--; }
@@ -49,7 +53,8 @@ document.onkeypress = function(event) {
   if(guessesLeft === 0){
     losses++; 
     alert("YOU LOOSE!");
-    guessesLeft = 3
+    guessesLeft = 3;
+    randomL = alphabet[Math.floor(Math.random()*alphabet.length)];
   }
 
   //display userInput
