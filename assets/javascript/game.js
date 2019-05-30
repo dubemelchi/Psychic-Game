@@ -38,7 +38,11 @@ function updateGuessesLeft(){
 document.onkeypress = function(event) {
   let userInput = event.key;
 
-  if(userInput === randomL){alert("YOU WIN!"); wins++;}
+  if (userInput === randomL) {
+    alert("YOU WIN!"); 
+    wins++; 
+    guessesLeft = 3
+  }
 
   else{ guessesLeft--; }
 
