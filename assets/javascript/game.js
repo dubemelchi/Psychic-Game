@@ -46,7 +46,11 @@ document.onkeypress = function(event) {
 
   else{ guessesLeft--; }
 
-  if(guessesLeft === 0){losses++; alert("YOU LOOSE!");}
+  if(guessesLeft === 0){
+    losses++; 
+    alert("YOU LOOSE!");
+    guessesLeft = 3
+  }
 
   //display userInput
   document.querySelector("#yGuesses").innerHTML = "Your Guesses: " + userInput;
