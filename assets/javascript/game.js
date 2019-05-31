@@ -45,11 +45,12 @@ if(guessesLeft === 3){
        }
 
   if (userInput === randomL) {
-    alert("YOU WIN!"); 
+     
     wins++; 
     guessesLeft = 3;
     randomL = alphabet[Math.floor(Math.random()*alphabet.length)];
     document.querySelector("#yGuesses").innerHTML = "Your Guesses: ";
+    alert("YOU WIN!");
 
 console.log(randomL);
 
@@ -62,10 +63,10 @@ console.log(randomL);
 
   if(guessesLeft === 0){
     losses++; 
-    alert("YOU LOOSE!");
     guessesLeft = 3;
     randomL = alphabet[Math.floor(Math.random()*alphabet.length)];
     document.querySelector("#yGuesses").innerHTML = "Your Guesses: ";
+    alert("YOU LOOSE!");
   }
 
   //display userInput
