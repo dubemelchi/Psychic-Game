@@ -8,7 +8,7 @@ let alphabet = ['a','b','c','d','e','f','g','h','j'];
 let wins = 0,
     losses = 0,
     guessesLeft = 3,
-    yourGuesses = [''];
+    yourGuesses = "";
     
 
 // Computer's guess
@@ -38,28 +38,38 @@ function updateGuessesLeft(){
 document.onkeypress = function(event) {
   let userInput = event.key;
 
+if(guessesLeft === 3){
+       document.getElementById("yGuesses").append(userInput)
+       }else{
+       document.getElementById("yGuesses").append("," + userInput)
+       }
+
   if (userInput === randomL) {
     alert("YOU WIN!"); 
     wins++; 
     guessesLeft = 3;
     randomL = alphabet[Math.floor(Math.random()*alphabet.length)];
-    
+    document.querySelector("#yGuesses").innerHTML = "Your Guesses: ";
 
 console.log(randomL);
 
   }
 
-  else{ guessesLeft--; }
+  else{ 
+    guessesLeft--; 
+  
+  }
 
   if(guessesLeft === 0){
     losses++; 
     alert("YOU LOOSE!");
     guessesLeft = 3;
     randomL = alphabet[Math.floor(Math.random()*alphabet.length)];
+    document.querySelector("#yGuesses").innerHTML = "Your Guesses: ";
   }
 
   //display userInput
-  document.querySelector("#yGuesses").innerHTML = "Your Guesses: " + userInput;
+  //document.querySelector("#yGuesses").innerHTML = "Your Guesses: " + userInput;
 
   console.log(userInput);
 
@@ -75,9 +85,17 @@ console.log(randomL);
 
 }
 
-updateGuessesLeft();
+//function to record guesses
+/*var arr = ['a','b','c']
 
-// Function that updates wins
+document.getElementById('yGuesses').textContent = arr.join(',')
+
+arr = []*/
+
+
+
+
+
 
 
 
